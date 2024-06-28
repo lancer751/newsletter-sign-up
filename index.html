@@ -5,48 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- styles css -->
+   <link rel="stylesheet" href="./css/styles.css">
   
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <title>Frontend Mentor | Newsletter sign-up form with success message by Lau Wong Coder</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  <!-- Sign-up form start -->
+  <section class="updatecard">
+    <div class="updatecard__container">
+      <article class="updatecard__content">
+        <h2 class="updatecard__title">Stay updated!</h2>
+        <p class="updatecard__paragraph">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
 
-  Stay updated!
+        <ul class="updatecard__list">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
 
-  Join 60,000+ product managers receiving monthly updates on:
+        <form action="" class="updatecard__form">
+          <div>
+            <label for="userEmail">
+              Email address
+            </label>
+            <input type="text" placeholder="email@company.com">
+          </div>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+          <button>Subscribe to monthly newsletter</button>
+        </form>
 
-  Email address
-  email@company.com
+      </article>
 
-  Subscribe to monthly newsletter
+      <picture>
+        <div class="updatecard__illustration"></div>
+      </picture>
+      <!-- <img src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration"> -->
+    </div>
+  </section>
+
+  <!--  -->
+
+  <!-- 
+
+   -->
 
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
 
-  Thanks for subscribing!
+  <!-- Thanks for subscribing!
 
   A confirmation email has been sent to ash@loremcompany.com. 
   Please open it and click the button inside to confirm your subscription.
 
-  Dismiss message
+  Dismiss message -->
 
   <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
 </body>
 </html>

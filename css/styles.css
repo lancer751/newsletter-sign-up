@@ -1,0 +1,160 @@
+@import url('./normalize.css');
+
+:root{
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+    --Tomato: hsl(4, 100%, 67%);
+    --Roboto: "Roboto", sans-serif;
+}
+
+body{
+    background-color: var(--Charcoal-Grey);
+    font-family: var(--Roboto);
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+.updatecard{
+    min-height: 100vh;
+}
+
+.updatecard__container{
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+}
+
+.updatecard__container picture{
+    order: 1;
+}
+
+.updatecard__illustration{
+    background-image: url('../assets/images/illustration-sign-up-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+
+.updatecard__content{
+    order: 2;
+    color: var(--Dark-Slate-Grey);
+    text-align: left;
+    padding: 2rem 1.1rem;
+}
+
+.updatecard__title{
+    color: var(--Dark-Slate-Grey);
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.updatecard__paragraph{
+    margin: 1rem 0;
+}
+
+.updatecard__list{
+    list-style: none;
+    font-size: 1rem;
+    padding: 0;
+    margin: 1.6rem 0;
+}
+
+.updatecard__list li{
+    position: relative;
+    padding-left: 2.3rem;
+}
+
+.updatecard__list li::before{
+    content: url('../assets/images/icon-list.svg');
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.updatecard__list li:nth-child(2){
+    margin: 0.8rem 0;
+}
+
+.updatecard__form div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.updatecard__form label{
+    color: var(--Dark-Slate-Grey);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.updatecard__form input{
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--Grey);
+    border-radius: 0.6rem;
+    color: var(--Dark-Slate-Grey);
+}
+
+.updatecard__form button{
+    cursor: pointer;
+    margin-top: 1.2rem;
+    display: block;
+    width: 100%;
+    border-radius: 0.45rem;
+    border: none;
+    color: var(--White);
+    font-size: 0.9rem;
+    background: var(--Charcoal-Grey);
+    padding: 0.7rem 0.9rem;
+
+}
+
+@media (min-width: 512px){
+    .updatecard{
+        min-height: max-content;
+        width: 90%;
+        margin: 0 auto;
+        padding: 4rem 0;
+    }
+
+    .updatecard__container{
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+
+    .updatecard__content{
+        padding: 2.3rem 1.5rem;
+    }
+}
+
+
+@media (min-width: 768px){
+    .updatecard__container{
+        max-width: 700px;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+    
+    .updatecard__container picture{
+        padding: 1rem;
+        order: 2;
+    }
+
+    .updatecard__content{
+        order: 1;
+        padding: 3.5rem 2.3rem;
+    }
+
+    .updatecard__illustration{
+        background-image: url('../assets/images/illustration-sign-up-desktop.svg');
+        height: 100%;
+        width: 300px;
+        border-radius: 0.9rem;
+    }
+}
