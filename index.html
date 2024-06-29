@@ -36,10 +36,10 @@
               Email address
               <span class="error-text">Valid Email required</span>
             </label>
-            <input type="text" name="email" class="updatecard__input" placeholder="email@company.com">
+            <input type="text" name="email" class="updatecard__input" autocomplete="off" placeholder="email@company.com">
           </div>
 
-          <button>Subscribe to monthly newsletter</button>
+          <button disabled class="updatecard__btn">Subscribe to monthly newsletter</button>
         </form>
 
       </article>
@@ -51,7 +51,7 @@
     </div>
   </section>
 
-  <div class="success success__active" id="cardSuccess">
+  <div class="success" id="cardSuccess">
       <article class="success__content">
         <strong class="success__title">
           <img src="./assets/images/icon-list.svg" alt="check icon">

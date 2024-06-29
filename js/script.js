@@ -1,27 +1,42 @@
 const formulario =  document.querySelector('#emailForm');
-formulario.addEventListener('submit', e=>{
-    e.preventDefault();
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    let formData = new FormData(formulario);
+const inputForm = document.querySelector('.updatecard__input');
+const btnForm = document.querySelector('.updatecard__form button')
 
-    const emailInput = formData.get('email');
+inputForm.addEventListener('input', e=> {
+    e.preventDefault()
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+    const emaiInput = e.target.value;
 
     // verficando email
-    const isValidEmail = regexEmail.test(emailInput)
-    if(isValidEmail){
-        showFinish()
-    }
+    const isValidEmail = regexEmail.test(emaiInput)
+    isValidEmail ? cleanError(): showError()
+})
+
+formulario.addEventListener('submit', e=>{
+    e.preventDefault();
+
+    showFinish()
 })
 
 function showError(){
     const errorText = document.querySelector('.error-text')
-    const errorInput = document.querySelector('.updatecard__form input')
 
-    console.log(errorText)
 
     errorText.style.display = 'inline-block'
-    errorInput.classList.remove('updatecard__input')
-    errorInput.classList.add('error-input')
+    inputForm.classList.remove('updatecard__input')
+    inputForm.classList.add('error-input')
+    btnForm.disabled = true
+    btnForm.classList.remove('updatecard__btn--active')
+}
+
+function cleanError(){
+    const errorText = document.querySelector('.error-text')
+
+    errorText.style.display = 'none'
+    inputForm.classList.remove('error-input')
+    inputForm.classList.add('updatecard__input')
+    btnForm.disabled = false
+    btnForm.classList.add('updatecard__btn--active')
 }
 
 function showFinish(){
@@ -30,5 +45,5 @@ function showFinish(){
 
     console.log(cardForm)
     cardForm.classList.add('updatecard-hidden')
-    cardSuccess.classList.remove('success__active')
+    cardSuccess.classList.add('success__active')
 }
