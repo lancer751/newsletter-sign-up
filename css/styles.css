@@ -5,8 +5,31 @@
     --Charcoal-Grey: hsl(235, 18%, 26%);
     --Grey: hsl(231, 7%, 60%);
     --White: hsl(0, 0%, 100%);
+    --Tomato-semitransparent: hsla(4, 100%, 67%, 0.295);
     --Tomato: hsl(4, 100%, 67%);
     --Roboto: "Roboto", sans-serif;
+}
+
+/* class utilities  */
+.error-input{
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.6rem;
+    background: var(--Tomato-semitransparent);
+    border: 1px solid var(--Tomato);
+    color: var(--Tomato);
+}
+
+.error-input::placeholder{
+    color: var(--Tomato);
+}
+
+.error-input:focus{
+    outline: none;
+}
+
+.error-text{
+    display: none;
+    color: var(--Tomato);
 }
 
 body{
@@ -14,10 +37,17 @@ body{
     font-family: var(--Roboto);
     font-size: 16px;
     min-height: 100vh;
+    display: flex;
+    place-items: center;
 }
 
 .updatecard{
+    display: block;
     min-height: 100vh;
+}
+
+.updatecard-hidden{
+    display: none;
 }
 
 .updatecard__container{
@@ -25,6 +55,8 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+
 
 .updatecard__container picture{
     order: 1;
@@ -90,15 +122,24 @@ body{
 
 .updatecard__form label{
     color: var(--Dark-Slate-Grey);
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.9rem;
     font-weight: 700;
 }
 
-.updatecard__form input{
+
+.updatecard__input{
     padding: 0.7rem 0.9rem;
     border: 1px solid var(--Grey);
     border-radius: 0.6rem;
     color: var(--Dark-Slate-Grey);
+}
+
+
+.updatecard__input:focus{
+    outline: none;
 }
 
 .updatecard__form button{
@@ -112,8 +153,69 @@ body{
     font-size: 0.9rem;
     background: var(--Charcoal-Grey);
     padding: 0.7rem 0.9rem;
-
 }
+
+.updatecard__form button:hover{
+    background: linear-gradient(45deg, hsl(0, 100%, 71%), hsl(14, 93%, 56%));
+}
+
+/* success modal */
+.success{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--White);
+    padding: 10rem  1.5rem 3rem;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform scale 1s ease-in-out;
+}
+
+.success__active{
+    display: none;
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.success__title{
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    font-size: 2.5rem;
+}
+
+.success__title img{
+    width: 4rem;
+}
+
+.success__paragraph{
+    line-height: 1.5;
+    color: var(--Dark-Slate-Grey);
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.success__button{
+    text-decoration: none;
+    border: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    background: var(--Charcoal-Grey);
+    color: var(--White);
+    padding: 1rem 0;
+    border-radius: 0.7rem;
+}
+
+.success__button:hover{
+    background: linear-gradient(45deg, hsl(0, 100%, 71%), hsl(14, 93%, 56%));
+}
+
+
+
+
 
 @media (min-width: 512px){
     .updatecard{
@@ -130,6 +232,16 @@ body{
 
     .updatecard__content{
         padding: 2.3rem 1.5rem;
+    }
+
+    .success{
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: max-content;
+        margin: 0 auto;
+        padding: 2rem 3.2rem;
+        max-width: 385px;
+        gap: 2.5rem;
     }
 }
 

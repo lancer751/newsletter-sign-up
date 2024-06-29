@@ -16,7 +16,7 @@
 </head>
 <body>
 
-  <section class="updatecard">
+  <section class="updatecard"  id="cardToUpdate">
     <div class="updatecard__container">
       <article class="updatecard__content">
         <h2 class="updatecard__title">Stay updated!</h2>
@@ -30,12 +30,13 @@
           <li>And much more!</li>
         </ul>
 
-        <form action="" class="updatecard__form">
+        <form action="" class="updatecard__form" id="emailForm">
           <div>
             <label for="userEmail">
               Email address
+              <span class="error-text">Valid Email required</span>
             </label>
-            <input type="text" placeholder="email@company.com">
+            <input type="text" name="email" class="updatecard__input" placeholder="email@company.com">
           </div>
 
           <button>Subscribe to monthly newsletter</button>
@@ -50,24 +51,21 @@
     </div>
   </section>
 
-  <!--  -->
+  <div class="success success__active" id="cardSuccess">
+      <article class="success__content">
+        <strong class="success__title">
+          <img src="./assets/images/icon-list.svg" alt="check icon">
+          Thanks for subscribing!
+        </strong>
+        <p class="success__paragraph">
+          A confirmation email has been sent to <strong>ash@loremcompany.com.</strong> 
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+        
+      </article>
 
-  <!-- 
-
-   -->
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  <!-- Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message -->
-
-  <!-- Success message end -->
-
+      <a href="./index.html" class="success__button">Dismiss message</a>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
